@@ -1,0 +1,58 @@
+<!-- <p>todo-list works!
+    <i class="fa-solid fa-circle-plus"></i>
+    <i class="fa-solid fa-trash-xmark"></i>
+</p> -->
+<div class="container d-flex justify-content-center">
+    <div class="row">
+        <div class="col-12">
+            <h1>To-Do-Application</h1>
+        </div>
+    </div>
+</div>
+
+<div class="container justify-content-center mt-4">
+    <div class="row">
+        <div class="col-8 ms-5">
+            <input class="" type="text" placeholder="Please enter your task" (keydown)="(0)" 
+            #task 
+            [(ngModel)]="nam" [ngClass]="{'correct':nam.length>0,'false': nam.length===0}">
+        </div>
+        <div class="col-2">
+            <button class="btn btn-info" (click)="addTaskValue(task.value)"
+                [disabled]="task.value.length==0">add</button></div>
+    </div>
+</div>
+
+<hr>
+
+<div class="row d-flex justify-content-center">
+    <div class="col-9  ">
+        <input placeholder="search here" (keyup)="filterResults(search.value)"
+            (mouseleave)="retur(search.value)" #search>
+        </div>
+</div>
+
+
+<div class="container d-flex justify-content-center mt-4">
+    <div class="row">
+        <span><strong>{{getlength()}} </strong> item left</span>
+    </div>
+</div>
+
+
+
+<ul *ngFor="let todo of list" class="list-group">
+    <div class="container  mt-4">
+        <div class="row">
+            <div class="col-9 ">
+                <li class="list-group-item">{{todo.name}}</li>
+            </div>
+            <div class="col-3">
+                <button class="btn btn-danger" (click)="removeTask(todo.id)"> remove</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- <button class="btn btn-danger"  (click)="removeTask(todo.id)"> -->
+
+</ul>

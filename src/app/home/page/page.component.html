@@ -1,0 +1,17 @@
+<p>home works!</p>
+<h4>NgFor (grouped)</h4>
+<h4>NgSwitch</h4>
+<ul *ngFor="let group of people"  [ngSwitch]="group.country">
+    <li *ngSwitchCase="'UK'" class="text-success">{{ group.name }} ({{ group.country }}) </li>
+    <li *ngSwitchCase="'USA'" class="text-primary">{{ group.name }} ({{ group.country }}) </li>
+    <li *ngSwitchCase="'HK'" class="text-danger">{{ group.name }} ({{ group.country }}) </li>
+    <li *ngSwitchDefault class="text-warning">{{ group.name }} ({{ group.country }}) </li>
+    <ul>
+        <li *ngFor="let person of group.people"> {{ person.name }} </li>
+    </ul>
+</ul>
+
+
+
+
+

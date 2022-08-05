@@ -1,0 +1,11 @@
+<p>star works!</p>
+<div class="row">
+    <div class="col-12">
+      <ul>
+        <li class="d-inline m-3" *ngFor="let star of stars" (click)="setSelectedStar(star)"
+          [ngClass]="star<=selectedStar?'selected':''" #starelem (mouseenter)="addStar(star)"  (mouseout)="removeStar(star)">
+          <i class="fa fa-star"></i>
+        </li>
+      </ul>
+    </div>
+  </div>

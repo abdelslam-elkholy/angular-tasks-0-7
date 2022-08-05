@@ -1,0 +1,46 @@
+
+<div class="row">
+    
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <table class="table table-hover">
+        <thead >
+          <tr class="bg-dark text-light">
+            <th>id</th>
+            <th>name</th>
+            <th> last name</th>
+            <th>user name</th>
+            <th>avatar</th>
+  
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of alluserFromApi.data">
+            <td>{{user.id}}</td>
+            <td>{{user.fname}}</td>
+            <td>{{user.sname}}</td>
+            <td>{{user.username}}</td>
+            <td><img [src]="user.avatar" style="height: 100px;"> </td>
+          </tr>
+        </tbody>
+      </table>
+      <nav aria-label="Page navigation example">
+        <ul class="pagination">
+          <li class="page-item">
+            <a class="page-link" aria-label="Previous" (click)="getallUserFromAPi(curntpage-1)" [hidden]="curntpage==1">
+              <span aria-hidden="true">Previous</span>
+            </a>
+          </li>
+          <li class="page-item" *appRepeat="alluserFromApi.total_pages;let i=index;"><a class="page-link"
+              (click)="getallUserFromAPi(i+1)" [ngClass]="{'active': curntpage==i+1}">{{i+1}}</a></li>
+          <li class="page-item">
+            <a class="page-link" (click)="getallUserFromAPi(curntpage+1)" aria-label="Next"
+              [hidden]="curntpage==alluserFromApi.total_pages">
+              <span aria-hidden="true">Next</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>

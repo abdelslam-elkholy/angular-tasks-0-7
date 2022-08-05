@@ -1,0 +1,5 @@
+input{width: 500px;}
+
+
+.correct{border: 1px solid rgb(7, 248, 7);}
+.false{border: 1px solid rgb(218, 5, 5);}

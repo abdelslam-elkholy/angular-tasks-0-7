@@ -1,0 +1,22 @@
+<div class="container bg-warning text-light my-1">
+  <div class="row" ><app-nav></app-nav></div>
+  </div>
+
+  <div class="row d-flex justify-content-center">
+    <div class="col-9  ">
+      <input type="text" [(ngModel)]="filterText" placeholder="searsh">
+        </div>
+</div>
+
+
+<div class="row">
+    <product-card class="col-4" *ngFor="let product of allprodut|filterProducts:filterText:['title','description']" [productdata]="product"
+    (OnSelectedProduct)="getSelectedproduct($event)" ></product-card>
+  
+  </div>
+
+  <!-- <div class="row">
+    <app-product-cart [productdtl]="productdata"></app-product-cart>
+  </div> -->
+<hr>
+  <!-- <p *appRepeat="7" appColors>Hello</p> -->

@@ -1,0 +1,14 @@
+
+<div class="card mb-2" style="width: 18rem;">
+    <img src={{product.image}} class="card-img-top" alt="...">
+    <div class="card-body">
+      <p class="card-text" ><strong>{{product.price|currency:'USD'}}</strong></p>
+      <p class="card-title text-muted">{{product.title}}</p>
+      <p class="card-title text-muted">{{product.description|productslice:30}}</p>
+      <a 
+      [routerLink]="['/productdet',product?.id]" class="btn btn-primary me-2">add to Cart</a>
+      <!-- <a  class="btn btn-primary me-2" (click)="setproductdata(product)">add to Cart</a> -->
+      <button 
+      class="btn btn-primary" (click)="productselected(product)">add to Fav</button>
+    </div>
+  </div>
